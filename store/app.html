@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Описание Приложения</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ВАШ СТИЛЬ */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            padding-top: 40px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* ШАПКА ПРИЛОЖЕНИЯ */
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .app-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
+        }
+        .app-main-info h1 {
+            margin: 0;
+            font-size: 28px;
+            text-align: left;
+        }
+        .short-desc {
+            color: #aaaaaa;
+            margin: 10px 0;
+        }
+
+        /* КНОПКА */
+        .download-btn {
+            display: inline-block;
+            padding: 12px 40px;
+            background-color: #8a2be2;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .download-btn:hover {
+            background-color: #a347ff;
+            transform: scale(1.05);
+        }
+
+        /* ХАРАКТЕРИСТИКИ (как в RuStore) */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 20px 0;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .info-item .label {
+            color: #666;
+            font-size: 12px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .info-item .value {
+            font-weight: bold;
+            color: #8a2be2;
+        }
+
+        /* СКРИНШОТЫ */
+        .screenshots-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding-bottom: 20px;
+            margin: 30px 0;
+        }
+        .screenshots-container::-webkit-scrollbar {
+            height: 5px;
+        }
+        .screenshots-container::-webkit-scrollbar-thumb {
+            background: #8a2be2;
+            border-radius: 10px;
+        }
+        .screenshots-container img {
+            height: 300px;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+
+        /* ОПИСАНИЕ */
+        .full-description {
+            line-height: 1.6;
+            color: #cccccc;
+            text-align: left;
+            margin-bottom: 100px;
+        }
+
+        .back-link {
+            color: #8a2be2;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-link">← Назад</a>
+
+    <div class="app-header">
+        <img src="https://via.placeholder.com/120" alt="Icon"> <!-- ИКОНКА -->
+        <div class="app-main-info">
+            <h1>Название приложения</h1> <!-- НАЗВАНИЕ -->
+            <p class="short-desc">Краткое описание приложения в одну строку.</p> <!-- КРАТКОЕ ОПИСАНИЕ -->
+            <a href="#" class="download-btn">Скачать</a>
+        </div>
+    </div>
+
+    <!-- ТТХ Приложения -->
+    <div class="info-grid">
+        <div class="info-item">
+            <span class="label">Возраст</span>
+            <span class="value">12+</span> <!-- ВОЗРАСТНОЕ ОГРАНИЧЕНИЕ -->
+        </div>
+        <div class="info-item">
+            <span class="label">Вес</span>
+            <span class="value">45 МБ</span> <!-- ВЕС -->
+        </div>
+        <div class="info-item">
+            <span class="label">Версия</span>
+            <span class="value">1.0.4</span> <!-- ВЕРСИЯ -->
+        </div>
+    </div>
+
+    <h2>Скриншоты</h2>
+    <div class="screenshots-container">
+        <!-- Добавляйте свои скриншоты ниже -->
+        <img src="https://via.placeholder.com/180x320" alt="Screen 1">
+        <img src="https://via.placeholder.com/180x320" alt="Screen 2">
+        <img src="https://via.placeholder.com/180x320" alt="Screen 3">
+        <img src="https://via.placeholder.com/180x320" alt="Screen 4">
+    </div>
+
+    <h2>Описание</h2>
+    <div class="full-description">
+        <!-- ПОЛНОЕ ОПИСАНИЕ -->
+        <p>Здесь вы можете написать подробное описание вашего приложения. Оно поддерживает несколько абзацев и выглядит чисто на черном фоне.</p>
+        <p>Ваше приложение — это лучшее решение для повседневных задач. Попробуйте прямо сейчас!</p>
+    </div>
+</div>
+
+</body>
+</html>
