@@ -1,0 +1,120 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    transition: background 0.5s ease-in-out;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    background-color: #000000;
+    padding: 60px 0;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header img {
+    position: absolute;
+    nav-down: 500px;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s;
+}
+
+
+h1, h2 {
+    color: #8a2be2;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+h3 {
+    color: black;
+}
+
+h1:hover, h2:hover {
+    color: #a347ff;
+    transform: scale(1.05);
+}
+
+.hero {
+    background-color: #000000;
+    padding: 60px 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s;
+}
+
+.buttons .button {
+    display: inline-block;
+    margin: 15px;
+    padding: 12px 24px;
+    background-color: #8a2be2;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.8s;
+}
+
+.buttons .button:hover {
+    background-color: #6c1bbd;
+    transform: scale(1.1);
+}
+
+.section {
+    padding: 60px 0;
+    background-color: #000000;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1s;
+}
+
+iframe {
+    display: block;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: none;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1.2s;
+}
+
+iframe:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #000000;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+    transition: color 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1.5s;
+}
+
+footer:hover {
+    color: #8a2be2;
+}
