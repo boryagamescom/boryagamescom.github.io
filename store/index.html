@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ВАШ СТИЛЬ */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            transition: background 0.5s ease-in-out;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        header {
+            background-color: #000000;
+            padding: 60px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1, h2 {
+            color: #8a2be2;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        h1:hover, h2:hover {
+            color: #a347ff;
+            transform: scale(1.05);
+        }
+        .section {
+            padding: 60px 0;
+            display: flex;
+            justify-content: center;
+            animation: fadeIn 1s forwards 1s;
+        }
+
+        /* СТИЛЬ КАРТОЧКИ ПРИЛОЖЕНИЯ */
+        .app-card {
+            background-color: #1a1a1a;
+            width: 150px;
+            height: 180px;
+            border-radius: 20px;
+            padding: 20px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+            border: 1px solid #333;
+        }
+        .app-card:hover {
+            transform: scale(1.05);
+            background-color: #252525;
+            border-color: #8a2be2;
+        }
+        .app-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+        .app-card span {
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>App Store</h1>
+</header>
+
+<div class="container">
+    <div class="section">
+        <!-- БЛОК ПРИЛОЖЕНИЯ -->
+        <a href="app.html" class="app-card">
+            <img src="https://via.placeholder.com/80" alt="Icon"> <!-- ЗАМЕНИТЬ ПУТЬ К ИКОНКЕ -->
+            <span>Название Приложения</span> <!-- ЗАМЕНИТЬ НАЗВАНИЕ -->
+        </a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2023 My App Store</p>
+</footer>
+
+</body>
+</html>
