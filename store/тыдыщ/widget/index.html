@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тыдыщ!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 85%;
+            max-width: 900px;
+            margin: auto;
+            padding-top: 40px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
 
+        .back-link {
+            color: #8a2be2;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        /* ВЕРХНЯЯ ЧАСТЬ */
+        .app-main {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .app-main img {
+            width: 120px;
+            height: 120px;
+            border-radius: 25px;
+        }
+        .app-info h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #8a2be2;
+        }
+        .short-description {
+            color: #888;
+            margin: 8px 0 20px 0;
+        }
+
+        .download-btn {
+            background-color: #8a2be2;
+            color: white;
+            padding: 12px 35px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .download-btn:hover {
+            background-color: #a347ff;
+            transform: scale(1.05);
+        }
+
+        /* ХАРАКТЕРИСТИКИ */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            padding: 25px 0;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .stat-box .label {
+            color: #555;
+            font-size: 12px;
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .stat-box .value {
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        /* СКРИНШОТЫ */
+        .screenshots {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            margin: 20px 0 40px 0;
+            padding-bottom: 10px;
+        }
+        .screenshots img {
+            height: 350px;
+            border-radius: 15px;
+            border: 1px solid #222;
+        }
+        .screenshots::-webkit-scrollbar {
+            height: 4px;
+        }
+        .screenshots::-webkit-scrollbar-thumb {
+            background: #8a2be2;
+        }
+
+        /* ОПИСАНИЕ */
+        .description-text {
+            line-height: 1.7;
+            color: #bbb;
+            margin-bottom: 60px;
+        }
+        
+        h2 { color: #8a2be2; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="http://boryagames.ru/store/" class="back-link">← Назад</a>
+
+    <div class="app-main">
+        <img src="http://boryagames.ru/store/тыдыщ/512TYD.png" alt="App Icon"> <!-- Локальный путь -->
+        <div class="app-info">
+            <h1>Тыдыщ!</h1>
+            <p class="short-description">«Тыдыщ!» — легкий, быстрый и независимый мессенджер. Связь без границ и рекламы.</p>
+            <a href="http://boryagames.ru/store/тыдыщ/app.apk" class="download-btn">Скачать</a> <!-- Локальный путь -->
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-box">
+            <span class="label">Разработчик</span>
+            <span class="value">Borya Games</span> <!-- ГРАФА РАЗРАБОТЧИК -->
+        </div>
+        <div class="stat-box">
+            <span class="label">Возраст</span>
+            <span class="value">16+</span>
+        </div>
+        <div class="stat-box">
+            <span class="label">Вес</span>
+            <span class="value">9,4 МБ</span>
+        </div>
+        <div class="stat-box">
+            <span class="label">Версия</span>
+            <span class="value">1.92</span>
+        </div>
+    </div>
+
+    <h2>Скриншоты</h2>
+    <div class="screenshots">
+        <img src="http://boryagames.ru/store/тыдыщ/scre.png" alt="Скриншот 1"> <!-- Локальный путь -->
+        <img src="http://boryagames.ru/store/тыдыщ/scre1.png" alt="Скриншот 2"> <!-- Локальный путь -->
+    </div>
+
+    <h2>Описание</h2>
+    <div class="description-text">
+        <p>Приложение «Тыдыщ!» является программным решением для обмена мгновенными сообщениями, разработанным командой Borya Games. Платформа обеспечивает связь между пользователями через текстовые диалоги и передачу медиафайлов.</p>
+    </div>
+</div>
+
+</body>
+</html>
