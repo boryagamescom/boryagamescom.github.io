@@ -3,145 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тыдыщ!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Виджет Тыдыщ!</title>
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #000000;
-            color: #ffffff;
+        /* Обнуляем отступы, чтобы виджет прижимался к краям iframe */
+        html, body {
             margin: 0;
             padding: 0;
+            background-color: transparent; /* Позволяет виджету принимать фон сайта-родителя */
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden; /* Отключаем появление полос прокрутки */
+            color: #ffffff;
         }
-        .container {
-            width: 85%;
-            max-width: 900px;
-            margin: auto;
-            padding-top: 40px;
+
+        .widget-container {
+            display: flex;
+            align-items: center;
+            border: 1px solid #222; /* Цвет рамки из вашего .stats-grid */
+            border-radius: 25px; /* Скругление из вашего .app-main img */
+            padding: 12px 20px;
+            background-color: #000000; /* Фон в тон вашего body */
+            box-sizing: border-box;
+            max-width: 100%;
+            height: 110px; /* Фиксированная высота виджета для встраивания */
             opacity: 0;
             animation: fadeIn 1s forwards;
         }
+
         @keyframes fadeIn {
-            to { opacity: 1; transform: translateY(0); }
+            to { opacity: 1; }
         }
 
-        .back-link {
-            color: #8a2be2;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 30px;
+        .icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            margin-right: 18px;
+            flex-shrink: 0;
+            object-fit: cover;
         }
 
-        /* ВЕРХНЯЯ ЧАСТЬ */
-        .app-main {
+        .info {
+            flex-grow: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-line {
             display: flex;
             align-items: center;
-            gap: 25px;
-        }
-        .app-main img {
-            width: 120px;
-            height: 120px;
-            border-radius: 25px;
-        }
-        .app-info h1 {
-            margin: 0;
-            font-size: 32px;
-            color: #8a2be2;
-        }
-        .short-description {
-            color: #888;
-            margin: 8px 0 20px 0;
+            gap: 12px;
+            margin-bottom: 4px;
         }
 
-        .download-btn {
+        .title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+            color: #8a2be2; /* Ваш фирменный цвет заголовков */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Блок характеристик в строку с вертикальными разделителями */
+        .widget-stats {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .stat-item {
+            font-size: 12px;
+            color: #888; /* Короткое описание (.short-description) */
+            white-space: nowrap;
+        }
+
+        .stat-item .label {
+            color: #555; /* Цвет лейблов из .stat-box */
+            text-transform: uppercase;
+            font-size: 11px;
+            margin-right: 4px;
+        }
+
+        .stat-item .value {
+            font-weight: bold;
+            color: #bbb; /* Цвет основного текста .description-text */
+        }
+
+        /* Вертикальный разделитель */
+        .separator {
+            width: 1px;
+            height: 12px;
+            background-color: #222; /* Цвет линий из вашего кода */
+        }
+
+        .btn-download {
+            align-self: flex-start;
             background-color: #8a2be2;
             color: white;
-            padding: 12px 35px;
+            padding: 5px 20px;
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 12px; /* Скругление вашей кнопки */
             font-weight: bold;
+            font-size: 12px;
             transition: 0.3s;
-            display: inline-block;
         }
-        .download-btn:hover {
+
+        .btn-download:hover {
             background-color: #a347ff;
             transform: scale(1.05);
         }
-
-        /* ХАРАКТЕРИСТИКИ */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 колонки */
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
-            padding: 25px 0;
-            margin: 40px 0;
-            text-align: center;
-        }
-        .stat-box .label {
-            color: #555;
-            font-size: 12px;
-            display: block;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-        .stat-box .value {
-            font-weight: bold;
-            font-size: 15px;
-        }
-
-        /* СКРИНШОТЫ */
-        .screenshots {
-            display: flex;
-            overflow-x: auto;
-            gap: 15px;
-            margin: 20px 0 40px 0;
-            padding-bottom: 10px;
-        }
-        .screenshots img {
-            height: 350px;
-            border-radius: 15px;
-            border: 1px solid #222;
-        }
-        .screenshots::-webkit-scrollbar {
-            height: 4px;
-        }
-        .screenshots::-webkit-scrollbar-thumb {
-            background: #8a2be2;
-        }
-
-        /* ОПИСАНИЕ */
-        .description-text {
-            line-height: 1.7;
-            color: #bbb;
-            margin-bottom: 60px;
-        }
-        
-        h2 { color: #8a2be2; }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="widget-container">
+    <!-- Иконка и путь из вашего кода -->
+    <img class="icon" src="http://boryagames.ru" alt="App Icon">
+    
+    <div class="info">
+        <div class="header-line">
+            <h3 class="title">Тыдыщ!</h3>
+        </div>
+        
+        <!-- Секция характеристик с вертикальным разделителем -->
+        <div class="widget-stats">
+            <div class="stat-item">
+                <span class="label">Разработчик:</span>
+                <span class="value">Borya Games</span>
+            </div>
+            <div class="separator"></div>
+            <div class="stat-item">
+                <span class="label">Возраст:</span>
+                <span class="value">16+</span>
+            </div>
+        </div>
 
-    <div class="app-main">
-        <img src="http://boryagames.ru/store/тыдыщ/512TYD.png" alt="App Icon"> <!-- Локальный путь -->
-        <div class="app-info">
-            <h1>Тыдыщ!</h1>
-            <p class="short-description">«Тыдыщ!» — легкий, быстрый и независимый мессенджер. Связь без границ и рекламы.</p>
-        </div>
+        <!-- Ссылка на скачивание -->
+        <a class="btn-download" href="https://boryagames.ru" target="_blank">Скачать</a>
     </div>
+</div>
 
-    <div class="stats-grid">
-        <div class="stat-box">
-            <span class="label">Разработчик</span>
-            <span class="value">Borya Games</span> <!-- ГРАФА РАЗРАБОТЧИК -->
-        </div>
-        <div class="stat-box">
-            <span class="label">Возраст</span>
-            <span class="value">16+</span>
-        </div>
-    </div>
 </body>
 </html>
