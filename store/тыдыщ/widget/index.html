@@ -6,26 +6,25 @@
     <title>Виджет Тыдыщ!</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* Обнуляем отступы, чтобы виджет прижимался к краям iframe */
         html, body {
             margin: 0;
             padding: 0;
-            background-color: transparent; /* Позволяет виджету принимать фон сайта-родителя */
+            background-color: transparent; 
             font-family: 'Montserrat', sans-serif;
-            overflow: hidden; /* Отключаем появление полос прокрутки */
+            overflow: hidden; 
             color: #ffffff;
         }
 
         .widget-container {
             display: flex;
             align-items: center;
-            border: 1px solid #222; /* Цвет рамки из вашего .stats-grid */
-            border-radius: 25px; /* Скругление из вашего .app-main img */
+            border: 1px solid #222; 
+            border-radius: 25px; 
             padding: 12px 20px;
-            background-color: #000000; /* Фон в тон вашего body */
+            background-color: #000000; 
             box-sizing: border-box;
             max-width: 100%;
-            height: 140px; /* Увеличено до 140px, чтобы описание гармонично поместилось */
+            height: 140px; 
             opacity: 0;
             animation: fadeIn 1s forwards;
         }
@@ -35,7 +34,7 @@
         }
 
         .icon {
-            width: 85px; /* Немного увеличили иконку под новую высоту */
+            width: 85px; 
             height: 85px;
             border-radius: 18px;
             margin-right: 18px;
@@ -62,23 +61,19 @@
             font-size: 18px;
             font-weight: 700;
             margin: 0;
-            color: #8a2be2; /* Ваш фирменный цвет заголовков */
+            color: #8a2be2; 
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-
-        /* Стили для описания */
         .desc {
             font-size: 12px;
-            color: #555; /* Цвет текста «Разработчик» из вашего .stat-box .label */
+            color: #555; 
             margin: 0 0 6px 0;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-
-        /* Блок характеристик в строку с вертикальными разделителями */
         .widget-stats {
             display: flex;
             align-items: center;
@@ -93,7 +88,7 @@
         }
 
         .stat-item .label {
-            color: #555; /* Цвет лейблов из .stat-box */
+            color: #555; 
             text-transform: uppercase;
             font-size: 11px;
             margin-right: 4px;
@@ -101,14 +96,12 @@
 
         .stat-item .value {
             font-weight: bold;
-            color: #bbb; /* Цвет основного текста .description-text */
+            color: #bbb; 
         }
-
-        /* Вертикальный разделитель */
         .separator {
             width: 1px;
             height: 12px;
-            background-color: #222; /* Цвет линий из вашего кода */
+            background-color: #222; 
         }
 
         .btn-download {
@@ -117,7 +110,7 @@
             color: white;
             padding: 5px 20px;
             text-decoration: none;
-            border-radius: 12px; /* Скругление вашей кнопки */
+            border-radius: 12px; 
             font-weight: bold;
             font-size: 12px;
             transition: 0.3s;
@@ -132,18 +125,13 @@
 <body>
 
 <div class="widget-container">
-    <!-- Иконка и путь из вашего кода -->
     <img class="icon" src="http://boryagames.ru/store/тыдыщ/512TYD.png" alt="App Icon">
     
     <div class="info">
         <div class="header-line">
             <h3 class="title">Тыдыщ!</h3>
         </div>
-
-        <!-- Описание под названием, цвет #555 -->
         <p class="desc">Легкий, быстрый и независимый мессенджер. Связь без границ и рекламы.</p>
-        
-        <!-- Секция характеристик с вертикальным разделителем -->
         <div class="widget-stats">
             <div class="stat-item">
                 <span class="label">Разработчик:</span>
@@ -155,8 +143,6 @@
                 <span class="value">16+</span>
             </div>
         </div>
-
-        <!-- Ссылка на скачивание -->
         <a class="btn-download" href="https://boryagames.ru/store/тыдыщ" target="_blank">Скачать</a>
     </div>
 </div>
